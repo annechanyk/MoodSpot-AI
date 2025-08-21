@@ -1,0 +1,101 @@
+.home-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.home-header {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.home-header h1 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 20px rgba(173, 216, 230, 0.8), 0 0 40px rgba(173, 216, 230, 0.4);
+  background: linear-gradient(45deg, #ffffff, #add8e6, #ffffff);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.home-header p {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  text-shadow: 0 0 10px rgba(224, 224, 224, 0.5);
+}
+
+.home-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.canvas-container {
+  flex: 1;
+  min-height: 300px;
+}
+
+.home-actions {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.home-actions .button {
+  width: 100%;
+  max-width: 300px;
+}
+
+.analysis-loading {
+  text-align: center;
+  padding: 2rem;
+}
+
+.analysis-loading .loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+.analysis-loading p {
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.analysis-tip {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (min-width: 768px) {
+  .home-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .canvas-container {
+    min-height: 400px;
+  }
+}

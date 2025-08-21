@@ -1,0 +1,332 @@
+.drawing-canvas-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+  position: relative;
+}
+
+.canvas-tools {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+}
+
+.color-picker {
+  display: flex;
+  align-items: center;
+}
+
+.color-input {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: none;
+}
+
+.brush-size {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 120px;
+}
+
+.brush-slider {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: #ddd;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.brush-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #007bff;
+  cursor: pointer;
+}
+
+.brush-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #007bff;
+  cursor: pointer;
+  border: none;
+}
+
+.brush-size-label {
+  font-size: 0.9rem;
+  color: #666;
+  min-width: 35px;
+}
+
+.clear-btn {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  transition: opacity 0.2s ease;
+}
+
+.clear-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.submit-btn {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.canvas-wrapper {
+  flex: 1;
+  position: relative;
+  min-height: 250px;
+}
+
+.drawing-canvas {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  cursor: crosshair;
+  touch-action: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.drawing-canvas.drawing-active {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.drawing-canvas.has-content {
+  border-color: #28a745;
+}
+
+.canvas-status {
+  text-align: center;
+}
+
+.canvas-hint {
+  color: #666;
+  font-style: italic;
+  margin: 0.5rem 0;
+  transition: color 0.2s ease;
+}
+
+.drawing-stats {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.stat-item {
+  padding: 2px 6px;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+/* Visual feedback for drawing actions */
+.drawing-feedback {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.drawing-indicator {
+  width: 12px;
+  height: 12px;
+  background: #007bff;
+  border-radius: 50%;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Export overlay */
+.export-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  z-index: 20;
+}
+
+.export-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.export-overlay span {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .canvas-tools {
+    flex-wrap: nowrap;
+  }
+  
+  .drawing-canvas {
+    min-height: 350px;
+  }
+}/* Mob
+ile-specific optimizations */
+@media (max-width: 767px) {
+  .canvas-tools {
+    padding: 0.75rem;
+    gap: 0.75rem;
+  }
+  
+  .color-input {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .brush-size {
+    min-width: 100px;
+  }
+  
+  .clear-btn, .submit-btn {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+    min-height: 44px; /* Touch target size */
+  }
+  
+  .canvas-wrapper {
+    min-height: 300px;
+  }
+  
+  .drawing-stats {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .stat-item {
+    font-size: 0.75rem;
+  }
+}
+
+/* High DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .drawing-canvas {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Landscape mobile orientation */
+@media (max-width: 767px) and (orientation: landscape) {
+  .canvas-wrapper {
+    min-height: 200px;
+  }
+  
+  .canvas-tools {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 0.5rem;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .drawing-canvas,
+  .submit-btn,
+  .clear-btn,
+  .canvas-hint {
+    transition: none;
+  }
+  
+  .drawing-indicator,
+  .export-spinner {
+    animation: none;
+  }
+  
+  .drawing-indicator {
+    opacity: 0.8;
+  }
+}
+
+/* Focus styles for keyboard navigation */
+.color-input:focus,
+.brush-slider:focus,
+.clear-btn:focus,
+.submit-btn:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* Touch-friendly hover states */
+@media (hover: hover) {
+  .clear-btn:hover:not(:disabled) {
+    background: #6c757d;
+  }
+  
+  .color-input:hover {
+    transform: scale(1.05);
+  }
+}
