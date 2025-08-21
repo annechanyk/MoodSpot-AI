@@ -1,157 +1,72 @@
-# MoodSpot 🎨📍
+**MoodSpot AI**: 
 
-**Discover your mood, find your spot**
+Understand your emotions when words are not enough. MoodSpot AI is an innovative web application that uses artificial intelligence to analyze your drawings, revealing your underlying mood and providing personalized wellness advice.
+In a world where we are often disconnected from our true feelings, MoodSpot serves as a creative tool for self-discovery. It provides a safe and private space to express emotions non-verbally, helping users become more aware of their mental state and offering gentle, supportive guidance.
 
-MoodSpot is a mobile-first React application that lets you express your emotions through touch-based drawing, analyzes your mood using AI, and provides personalized local business recommendations based on how you're feeling.
+![Alt text](images/moodspot-demo-1.png)
+![Alt text](images/moodspot-demo-2.png)
 
-## ✨ Features
 
-- **🎨 Mood Canvas**: Touch-friendly drawing interface optimized for mobile devices
-- **🤖 AI Mood Analysis**: Advanced mood detection using OpenAI's GPT-4 Vision
-- **📍 Spot Finder**: Personalized local business recommendations based on your mood
-- **📊 Mood Journey**: Track your emotional patterns over time
-- **🔒 Privacy First**: All personal data stored locally on your device
-- **⚡ Rate Limited**: Smart API usage management to stay within budget
+**Key Features**:
+- Creative Emotional Expression: A simple and intuitive digital canvas to draw whatever you're feeling.
+- Instant AI Mood Analysis: Leverages OpenAI's powerful vision models to provide real-time analysis of your drawings.
+- Personalized Wellness Recommendations: Receive actionable, supportive advice tailored to your detected mood.
+- Historical Mood Journey: Every analysis is securely stored on TiDB Cloud, allowing you to track your emotional patterns and journey over time.
 
-## 🚀 Quick Start
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd moodspot
-   ```
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+**Tech Stack & Services**:
+MoodSpot AI is built on a modern, scalable, and AI-native tech stack...
+- Frontend: React
+- Database: TiDB Cloud (Serverless)
+- Development Assistant: Built with the AI-powered capabilities of Kiro
+- AI Mood Analysis: OpenAI API (GPT-4 Vision)
 
-3. **Set up environment variables**
-   ```bash
-   cp .env.example .env
-   # Edit .env and add your API keys
-   ```
 
-4. **Start development server**
-   ```bash
-   npm run dev
-   ```
 
-5. **Open in browser**
-   Navigate to `http://localhost:5173`
+**How MoodSpot AI Works: An Innovative AI Workflow**
+MoodSpot AI is more than just an app- it's a complete, multi-step agentic process that transforms a simple drawing into actionable insight. This workflow showcases a powerful integration of modern AI and data technologies.
 
-## 🔑 API Keys Required
+The Multi-Step Flow:
+Our application follows an automated, end-to-end process that aligns perfectly with the architecture of modern AI agent
+1.  Ingest & Index Data (The Drawing):
+The process begins when a user creates a drawing. This image—a rich, unstructured piece of data—is ingested by the application. This visual data serves as the primary input for our AI agent.
+2.  Invoke External Tools (OpenAI API Call):
+The application invokes an external tool: the OpenAI Vision API. The drawing is sent to the API, which acts as a specialized "tool" for emotional analysis, interpreting the colors, lines, and shapes to derive meaning.
+3.  Chain LLM Calls (Analysis & Recommendation):
+The OpenAI service performs its analysis and returns a structured JSON object containing the `primaryMood`, `confidence`, and a descriptive analysis. Based on this result, a subsequent process generates personalized wellness `recommendations`, creating a chain of intelligent actions.
+4.  Search Your Data (TiDB Cloud Integration):
+The structured analysis result is then indexed and stored in TiDB Cloud database. This crucial step transforms the ephemeral analysis into persistent, queryable data. TiDB's robust indexing allows for efficient retrieval, making it possible to query past moods and build a historical emotional timeline for the user.
+5.  Build a Multi-Step Flow (The Complete User Experience):
+This entire sequence is wired together into a single, seamless user experience. From the initial brushstroke to the final display of personalized advice and the saving of the mood entry, the process is a fully automated, multi-step flow. The user simply draws and receives insight, while the underlying agent handles the complex chain of ingestion, tool invocation, data storage, and presentation.
 
-MoodSpot requires two API keys for full functionality:
+**Data Flow Summary**:
+[User Draws on Canvas] --> [Image Ingestion] --> [OpenAI API Call] --> [AI Mood Analysis] --> [TiDB Cloud Storage] --> [Display Results & Recommendations]
 
-### OpenAI API Key
-- **Purpose**: Mood analysis from drawings
-- **Daily Limit**: 100 calls
-- **Get yours**: [OpenAI Platform](https://platform.openai.com/api-keys)
-- **Environment Variable**: `VITE_OPENAI_API_KEY`
 
-### Google Places API Key
-- **Purpose**: Local business recommendations
-- **Daily Limit**: 250 calls
-- **Get yours**: [Google Cloud Console](https://console.cloud.google.com/apis/credentials)
-- **Environment Variable**: `VITE_GOOGLE_PLACES_API_KEY`
 
-## 📱 How It Works
+**Leveraging TiDB Cloud for a Scalable Data Backbone**:
+TiDB Cloud is the core of MoodSpot AI's data persistence and analytics capabilities.
+- Scalable Storage: TiDB serverless cluster, which automatically scales to handle user growth without any manual intervention, is used. This is perfect for an application where usage can be unpredictable.
+- Data Reliability: Every mood analysis is stored in a 'mood_entries' table. TiDB's distributed architecture and ACID compliance ensure that this data is always consistent and available.
+- Foundation for Future Features: Storing mood data in TiDB allows for powerful future features, such as long-term trend analysis, pattern recognition, and even vector search to find drawings with similar emotional characteristics.
 
-1. **Draw Your Mood**: Use the touch-friendly canvas to express how you're feeling
-2. **AI Analysis**: MoodSpot analyzes your drawing patterns to detect your emotional state
-3. **Find Your Spot**: Get personalized recommendations for local businesses that match your mood
-4. **Track Progress**: View your mood history and discover patterns over time
+**Development Journey with Kiro**:
+This project was developed with the assistance of Kiro, an AI-powered coding environment. This was instrumental in:
+- Rapid Prototyping: Quickly building the React components for the drawing canvas, UI elements, and results display.
+Seamless API Integration: Generating the boilerplate code needed to connect to both the OpenAI and TiDB Cloud APIs, including handling asynchronous requests and parsing responses.
+- Efficient Debugging: The AI assistant helped identify and resolve complex issues with state management, API error handling, and database connection logic, turning hours of debugging into minutes.
 
-## 🏗️ Architecture
 
-MoodSpot is built with:
 
-- **Frontend**: React 18 with Vite
-- **Routing**: React Router DOM
-- **Storage**: IndexedDB for local data persistence
-- **APIs**: OpenAI GPT-4 Vision, Google Places API
-- **Rate Limiting**: Client-side quota management
-- **Testing**: Vitest for unit and integration tests
+**Getting Started & Running the Project**:
+This project was bootstrapped with Create React App and requires Node.js to run. The core logic relies on API keys for OpenAI and TiDB Cloud, which should be stored in a `.env` file.
 
-## 📊 Rate Limits
+A brief overview of the local setup process:
+1.  Clone the repository
+2.  Install dependencies using `npm install`
+3.  Configure API keys in a local `.env` file
+4.  Run the development server with `npm run dev`
 
-MoodSpot implements strict rate limiting to manage API costs:
+*Due to the requirement for private API keys, a live, publicly accessible demo is not provided. Please refer to the demo video for a complete walkthrough of the application's functionality.*
 
-- **OpenAI API**: 100 calls per day
-- **Google Places API**: 250 calls per day  
-- **Database Operations**: 1,000 operations per day
-
-Quotas reset daily at midnight local time.
-
-## 🧪 Testing
-
-Run the test suite:
-
-```bash
-npm test
-```
-
-Run tests in watch mode:
-
-```bash
-npm run test:watch
-```
-
-## 🔧 Development
-
-### Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm test` - Run tests
-
-### Project Structure
-
-```
-src/
-├── components/          # Reusable UI components
-├── screens/            # Main application screens
-├── services/           # Core services (rate limiting, storage)
-├── hooks/              # Custom React hooks
-├── utils/              # Utility functions
-├── config/             # Configuration and branding
-└── styles/             # CSS styling files
-```
-
-## 🎨 Mood Categories
-
-MoodSpot recognizes various emotional states and maps them to appropriate business categories:
-
-- **Happy** → Restaurants, parks, shopping, entertainment
-- **Calm** → Spas, libraries, cafes, museums
-- **Anxious** → Spas, parks, gyms, quiet cafes
-- **Creative** → Art galleries, museums, bookstores
-- **Energetic** → Gyms, amusement parks, active venues
-- **Social** → Restaurants, bars, social venues
-
-## 🔒 Privacy & Security
-
-- **Local Storage**: All personal data stays on your device
-- **No Server**: No server-side storage of drawings or mood data
-- **API Security**: Secure API key management
-- **Data Control**: Users control their data retention
-
-## 🌟 Contributing
-
-We welcome contributions! Please see our contributing guidelines for details.
-
-## 📄 License
-
-MIT License - see LICENSE file for details.
-
-## 🆘 Support
-
-- **Email**: support@moodspot.app
-- **Issues**: [GitHub Issues](repository-url/issues)
-- **Documentation**: [Wiki](repository-url/wiki)
-
----
-
-**MoodSpot** - Where emotions meet locations 🎨📍
