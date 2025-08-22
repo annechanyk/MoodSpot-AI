@@ -58,7 +58,7 @@ TiDB Cloud is the core of MoodSpot AI's data persistence and analytics capabilit
 **Development Journey with Kiro**:
 This project was developed with the assistance of Kiro, an AI-powered coding environment. This was instrumental in:
 - Rapid Prototyping: Quickly building the React components for the drawing canvas, UI elements, and results display.
-Seamless API Integration: Generating the boilerplate code needed to connect to both the OpenAI and TiDB Cloud APIs, including handling asynchronous requests and parsing responses.
+- Seamless API Integration: Generating the boilerplate code needed to connect to both the OpenAI and TiDB Cloud APIs, including handling asynchronous requests and parsing responses.
 - Efficient Debugging: The AI assistant helped identify and resolve complex issues with state management, API error handling, and database connection logic, turning hours of debugging into minutes.
 
 
