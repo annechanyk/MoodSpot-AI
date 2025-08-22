@@ -3,7 +3,7 @@
 Understand your emotions when words are not enough. MoodSpot AI is an innovative web application that uses artificial intelligence to analyze your drawings, revealing your underlying mood and providing personalized wellness advice.
 In a world where we are often disconnected from our true feelings, MoodSpot serves as a creative tool for self-discovery. It provides a safe and private space to express emotions non-verbally, helping users become more aware of their mental state and offering gentle, supportive guidance.
 
-[![Website](https://drive.google.com/file/d/1gjTJ4uRE71-KGKer0kb1VY9IilgyFchX/view?usp=sharing)]
+![Smart Assistant Demo](https://drive.google.com/uc?export=view&id=1gjTJ4uRE71-KGKer0kb1VY9IilgyFchX)
 
 
 **Key Features**:
