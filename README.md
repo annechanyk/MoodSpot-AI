@@ -5,7 +5,10 @@ In a world where we are often disconnected from our true feelings, MoodSpot serv
 
 <img src="https://drive.google.com/uc?export=view&id=1gjTJ4uRE71-KGKer0kb1VY9IilgyFchX" alt="Mood Spot Demo 1" width="400"/> <img src="https://drive.google.com/uc?export=view&id=1KoKIY1jULLENL96m3HFBrbgvdVnURdgf" alt="Mood Spot Demo 2" width="400"/>
 
-**Click Below Image for Video Demo**
+
+
+**Click Below Image for Video Demo:**
+
 [![Watch the MoodSpot AI Demo Video](https://img.youtube.com/vi/C2CyqicRxzs/maxresdefault.jpg)](https://youtube.com/shorts/C2CyqicRxzs?feature=share)
 
 **Key Features**:
