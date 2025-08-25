@@ -7,9 +7,6 @@ In a world where we are often disconnected from our true feelings, MoodSpot serv
 
 
 
-**Click Below Image for Video Demo:**
-
-[![Watch the demo](https://img.youtube.com/vi/ZEK1rp172mo/hqdefault.jpg)](https://youtube.com/shorts/ZEK1rp172mo?feature=share)
 
 **Key Features**:
 - Creative Emotional Expression: A simple and intuitive digital canvas to draw whatever you're feeling.
